@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --very-dark-desatured: hsl(229, 23%, 23%);
+  --dark-grayish: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+  --white: #fff;
+}
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  background-color: var(--dark-cyan);
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body::before {
+  content: '';
+  background-image: url(../img/bg-pattern-top.svg);
+  width: 978px;
+  height: 978px;
+  display: block;
+  position: absolute;
+  top: -66%;
+  left: -16%;
+}
+body::after {
+  content: '';
+  background-image: url('../img/bg-pattern-bottom.svg');
+  width: 978px;
+  height: 978px;
+  display: block;
+  bottom: -91%;
+  position: absolute;
+  right: -7%;
+}
+
+.card {
+  z-index: 3;
+  border-radius: 5%;
+  width: 350px;
+  background: var(--white) url(../img/bg-pattern-card.svg) no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 10px 21px var(--dark-cyan);
+  animation: floating 2.6s linear infinite;
+}
+.card__avatar {
+  border: 5px solid var(--white);
+  border-radius: 50%;
+  margin-top: 24%;
+}
+.card__info {
+  color: var(--very-dark-desatured);
+  text-align: center;
+  width: 100%;
+  margin: 7% 0 10% 0;
+}
+.card__info__name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 3%;
+}
+.card__info__name > span {
+  margin-left: 1%;
+  color: var(--dark-grayish);
+  font-weight: 400;
+}
+.card__info__city {
+  color: var(--dark-grayish);
+  font-weight: 400;
+}
+.card__social {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 6%;
+  border-top: 1px solid hsl(0deg 0% 59% / 24%);
+}
+.card__social__data {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--very-dark-desatured);
+  text-align: center;
+}
+.card__social__data > span {
+  font-weight: 400;
+  color: var(--dark-gray);
+  font-size: 0.8rem;
+  display: block;
+  position: relative;
+  top: 18%;
+}
+@media (max-width: 768px) {
+  body::before {
+    top: -99%;
+    left: -81%;
+  }
+  body::after {
+    bottom: -113%;
+    right: -62%;
+  }
+}
+@media (max-width: 425px) {
+  body::before {
+    top: -96%;
+    left: -166%;
+  }
+  body::after {
+    bottom: -120%;
+    right: -141%;
+  }
+}
+@keyframes floating {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
